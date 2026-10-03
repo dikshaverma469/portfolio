@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-signature: "Alex Brush", "Caveat", cursive;
+
+  --color-cream: #f5f1e8;
+  --color-cream-light: #faf8f5;
+  --color-cream-card: #f9f6f0;
+  --color-cream-dark: #e8e0d2;
+  --color-ink: #161514;
+  --color-ink-muted: #6c645c;
+  --color-ink-light: #8e857c;
+  --color-terracotta: #c1603e;
+  --color-terracotta-dark: #a54b2d;
+  --color-terracotta-light: #fbeee8;
+  --color-terracotta-glow: rgba(193, 96, 62, 0.15);
+  --color-hairline: #ded6c8;
+  --color-hairline-dark: #3a342f;
+}
+
+@layer base {
+  * {
+    border-color: #ded6c8;
+  }
+  
+  html {
+    background-color: #f5f1e8;
+    color: #161514;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: #f5f1e8;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f5f1e8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c8beaf;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c1603e;
+  }
+}
+
+/* Editorial typography utilities */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-signature {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+
+/* Editorial rotated spine text */
+.writing-vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+.writing-vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+/* Hairline border helper */
+.editorial-border {
+  border: 1px solid #ded6c8;
+}
+
+.editorial-divider {
+  height: 1px;
+  background-color: #ded6c8;
+  width: 100%;
+}
+
+/* Subtle paper texture overlay (pure CSS) */
+.paper-texture {
+  background-color: #f5f1e8;
+  background-image: radial-gradient(#d3cabb 0.75px, transparent 0.75px), radial-gradient(#d3cabb 0.75px, #f5f1e8 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Rotating badge animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 24s linear infinite;
+}
+
+/* Newspaper column divider */
+.column-rule {
+  border-right: 1px solid #ded6c8;
+}
